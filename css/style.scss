@@ -3,6 +3,68 @@
 //-----------------------------
 
 //共通フォント設定
+h1,h2,h3,h4,h5,h6,p,a{
+  font-family: "ヒラギノ角ゴ";
+  font-size: 16px;
+}
+
+.title{
+  font-family:"Futura";
+  font-size: 43px;
+  color:#301F1B;
+  letter-spacing: 0;
+  line-height: 1.53;
+}
+
+.font-en{
+  font-family: "Futura Condensed Medium 43pt";
+}
+
+.txtxl{font-size: 34px;}
+.txtl{font-size: 22px;}
+.txtm{font-size: 18px;}
+.txts{font-size: 14px;}
+.txtxs{font-size: 12px;}
+
+a:hover{
+  transition:.3s;
+  opacity:.8;
+}
+
+//共通色設定
+$white:#ffffff;
+$black:#333333;
+$brown:#421f15;
+$red:#c63205;
+
+//共通レイアウト設定
+.container{
+  max-width:810px;
+  margin:0 auto;
+}
+
+//背景設定
+body{
+ background-image: url(../img/background.jpg);
+ background-size: cover;
+}
+
+//共通モジュール
+@mixin detail-btn($width,$height){
+  display: inline-block;
+  background-color: $red;
+  color:$white;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  width:$width;
+  line-height: $height;
+}
+
+img{
+  width:100%;
+  height:auto;
+}
 
 //-----------------------------
 //共通設定ここまで
@@ -14,3 +76,170 @@
 //トップページ
 //-----------------------------
 
+.header{
+ height: 90px;
+ text-align: center;
+}
+.global-nav{
+  max-width:664.28px;
+  margin:0 auto;
+  height:100%;
+  color:$brown;
+  font-weight: 600;
+  &__nav-list{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__nav-item{
+    .txtxs{
+      margin-bottom: 5.9px;
+    }
+  }
+}
+
+
+.topview-area{
+  height: 60vh;
+  background-image: url(../img/topview.jpg);
+  background-position:right center;
+  padding:60px 0;
+}
+.topview{
+  max-width: 920px;
+  height:100%;
+  margin:0 auto;
+  position: relative;
+  &__info{
+    position: absolute;
+    width:370px;
+    left:0;
+    bottom:0;
+  }
+  &__text-area{
+    position: absolute;
+    right:0;
+    bottom:0;
+    color:$white;
+    width:340px;
+  }
+  &__text1,&__text2{
+    line-height: 1.57;
+  }
+  &__text2{
+    margin-top: 5px;
+  }
+  &__detail-btn{
+    position: absolute;
+    right:0;
+    bottom:-90px;
+    @include detail-btn(200px, 60px);
+  }
+}
+@media (min-width:1793px){
+  .topview{
+    background-size: cover;
+  }
+}
+
+
+.intro{
+  margin-top: 60px;
+  text-align: center;
+  padding:30px;
+  background-color: rgba(255, 255, 255, .29);
+  background-image: url(../img/intro.png);
+  background-repeat: no-repeat;
+  background-size: 25%;
+  &__sub-title{
+    font-size: 34px;
+    font-weight: 600;
+    color:#AEAFAD;
+    margin-top: 15px;
+    line-height: 1;
+  }
+  &__text{
+    margin-top: 30px;
+    color:$black;
+    text-align: left;
+    line-height: 1.75;
+    columns: 2;
+  }
+}
+
+
+.news{
+  margin-top: 60px;
+  text-align: center;
+  position: relative;
+  &__detail-btn{
+    @include detail-btn(120px, 40px);
+    position: absolute;
+    top:10px;
+    right:0;
+  }
+  &__contents{
+    margin-top: 29px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.card{
+  width:250px;
+  height:260px;
+  background-color: #fff;
+  margin-bottom: 30px;
+  &__link{
+    display: flex;
+    flex-direction: column;
+  }
+  &__img{
+    height:140px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  &__text{
+    padding:14px 15px;
+    text-align: left;
+  }
+  &__date{
+    color: #666666;
+    line-height: 1.75;
+  }
+  &__title{
+    font-weight: 600;
+    line-height: 1.31;
+  }
+}
+
+// .card__body:nth-child(2){
+//   opacity:0;
+//   flex-direction: row;
+//   width:390px;
+//   height:88px;
+// }
+
+// .card:nth-child(n+4){
+//   width:390px;
+//   height:88px;
+// }
+
+.card-45{
+  width:390px;
+  height:88px;
+  .card__link{
+    flex-direction:row;
+    height:100%;
+  }
+  .card__img{
+    width: 156px;
+    height:100%;
+  }
+  .card__text{
+    width:234px;
+    height:88px;
+  }
+}

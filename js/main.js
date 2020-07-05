@@ -1,18 +1,16 @@
 
-//ハンバーガーメニュー・ポップアップメニュー
+//news記事の4番目以降の表示変更
 $(function(){
-  $('.header__menu, .nav_sub').on('click', function(){
-    if($('.menu-trigger').hasClass('active')){
-      $('.menu-trigger').removeClass('active');
-      $('.menu-trigger-txt').text('MENU');
-      $('.nav_popup').removeClass('active');
-    }else{
-      $('.menu-trigger').addClass('active');
-      $('.menu-trigger-txt').text('CLOSE');
-      $('.nav_popup').addClass('active');
-    }
-  })
-});
+  $(window).on('load', function(){
+    $('.card').eq(3).addClass('card-45');
+    $('.card').eq(4).addClass('card-45');
+  });
+})
+
+
+
+
+
 
 
 //クラスにanimateを含む(sectionタグ)が表示エリアに入ったらanimate処理(waypoint.js + animate.css)
@@ -36,12 +34,3 @@ $(function(){
   animate();
 })
 
-
-//GoogleMap表示(API keyはHTMLのheadタグで定義)
-var map;
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 35.690, lng: 139.700 },
-    zoom: 15
-  });
-}
