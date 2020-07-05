@@ -49,6 +49,7 @@ a:hover {
 body {
   background-image: url(../img/background.jpg);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 img {
@@ -242,4 +243,257 @@ img {
 .card-45 .card__text {
   width: 234px;
   height: 88px;
+}
+
+.story {
+  background-image: url(../img/story.jpg);
+  background-position: top;
+}
+
+.story__container {
+  text-align: center;
+  padding: 30px 0 32px;
+}
+
+.story__title {
+  color: #ffffff;
+}
+
+.story__text-area {
+  margin-top: 19px;
+  text-align: right;
+}
+
+.story__text {
+  margin: 0 0 0 auto;
+  text-align: left;
+  color: white;
+  width: 320px;
+  height: 245px;
+  overflow: hidden;
+  line-height: 1.75;
+}
+
+.story__detail-btn {
+  margin-top: 8.6px;
+  display: inline-block;
+  background-color: #c63205;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  width: 116px;
+  line-height: 37px;
+}
+
+@media (min-width: 1022px) {
+  .story {
+    background-size: cover;
+  }
+}
+
+.comments {
+  margin-top: 57px;
+  text-align: center;
+}
+
+.comments__sub-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 33px;
+}
+
+.comments__exp {
+  margin-top: 33px;
+  background-image: url(../img/comments.jpg);
+  background-position: center;
+  color: #ffffff;
+  padding: 44px 30px;
+  position: relative;
+}
+
+.comments__text-area {
+  width: 420px;
+  text-align: left;
+}
+
+.comments__person {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.comments__person--strong {
+  font-size: 26px;
+}
+
+.comments__text {
+  margin-top: 15px;
+  line-height: 1.57;
+}
+
+.comments__detail-btn {
+  display: inline-block;
+  background-color: #c63205;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  width: 116.71px;
+  line-height: 36.43px;
+  position: absolute;
+  right: 14.3px;
+  bottom: 14.4px;
+}
+
+.cast {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.cast__white {
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-top: 134px;
+  position: relative;
+  height: 650px;
+}
+
+.cast__container {
+  position: absolute;
+  top: -110px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cast__detail-btn {
+  position: absolute;
+  bottom: 30px;
+  display: inline-block;
+  background-color: #c63205;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  width: 115.71px;
+  line-height: 35px;
+  color: #c63205;
+  background-color: transparent;
+  border: 5px #c63205 solid;
+}
+
+.person {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.person__image {
+  width: 220px;
+  margin: 0 auto;
+}
+
+.person__image img {
+  border-radius: 50%;
+}
+
+.person__info {
+  margin-top: 38.8px;
+}
+
+.person__name {
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+.person__sub-work {
+  margin-top: 14px;
+  color: #666666;
+}
+
+.person__text {
+  margin-top: 14px;
+  color: #666666;
+  line-height: 1.75;
+  text-align: left;
+}
+
+.schedule {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.schedule__area {
+  background-color: rgba(255, 255, 255, 0.29);
+  padding: 30px 77px 60px;
+}
+
+.schedule__list {
+  margin-top: 29px;
+  font-size: -20px;
+}
+
+.schedule__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.schedule__time {
+  font-size: 20px;
+}
+
+.schedule__place {
+  font-size: 20px;
+}
+
+.schedule__ticket {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.schedule__link {
+  display: inline-block;
+  margin: 30px auto 0;
+  width: 416px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.schedule__inquiry-btn {
+  display: inline-block;
+  background-color: #c63205;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  width: 193px;
+  line-height: 60px;
+  background-color: #603813;
+}
+
+.schedule__detail-btn {
+  display: inline-block;
+  background-color: #c63205;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  width: 193px;
+  line-height: 60px;
+}
+
+footer {
+  margin-top: 60px;
+  height: 80px;
+  background-color: #1A1A1A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__text {
+  color: #ffffff;
 }

@@ -47,6 +47,7 @@ $red:#c63205;
 body{
  background-image: url(../img/background.jpg);
  background-size: cover;
+ background-attachment: fixed;
 }
 
 //共通モジュール
@@ -242,4 +243,192 @@ img{
     width:234px;
     height:88px;
   }
+}
+
+.story{
+  background-image: url(../img/story.jpg);
+  background-position: top;
+  &__container{
+    text-align: center;
+    padding: 30px 0 32px;
+  }
+  &__title{
+    color:$white;
+  }
+  &__text-area{
+    margin-top: 19px;
+    text-align: right;
+  }
+  &__text{
+    margin:0 0 0 auto;
+    text-align: left;
+    color:white;
+    width: 320px;
+    height:245px;
+    overflow: hidden;
+    line-height: 1.75;
+  }
+  &__detail-btn{
+    margin-top: 8.6px;
+    @include detail-btn(116px, 37px);
+  }
+}
+@media (min-width:1022px){
+  .story{
+    background-size: cover;
+  }
+}
+
+
+.comments{
+  margin-top: 57px;
+  text-align: center;
+  &__sub-title{
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 33px;
+  }
+  &__exp{
+    margin-top: 33px;
+    background-image: url(../img/comments.jpg);
+    background-position: center;
+    color:$white;
+    padding:44px 30px;
+    position: relative;
+  }
+  &__text-area{
+    width: 420px;
+    text-align: left;
+  }
+  &__person{
+    font-size: 20px;
+    font-weight: 600;
+    &--strong{
+      font-size: 26px;
+    }
+  }
+  &__text{
+    margin-top: 15px;
+    line-height: 1.57;
+  }
+  &__detail-btn{
+    @include detail-btn(116.71px, 36.43px);
+    position: absolute;
+    right: 14.3px;
+    bottom: 14.4px;
+  }
+}
+
+.cast{
+  margin-top: 60px;
+  text-align: center;
+  &__white{
+    background-color:rgba(255, 255, 255, 0.9);
+    margin-top:134px;
+    position: relative;
+    height:650px;
+  }
+  &__container{
+    position:absolute;
+    top:-110px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__detail-btn{
+    position: absolute;
+    bottom:30px;
+    @include detail-btn(115.71px, 35px)
+    color:$red;
+    background-color: transparent;
+    border:5px $red solid;
+  }
+}
+
+.person{
+  width:250px;
+  display: flex;
+  flex-direction: column;
+  &__image{
+    width:220px;
+    margin:0 auto;
+    img{
+      border-radius: 50%;
+    }
+  }
+  &__info{
+    margin-top:38.8px;
+  }
+  &__name{
+    margin-top: 14px;
+    font-weight: 600;
+  }
+  &__sub-work{
+    margin-top: 14px;
+    color: #666666;
+  }
+  &__text{
+    margin-top: 14px;
+    color: #666666;
+    line-height: 1.75;
+    text-align: left;
+  }
+}
+
+
+.schedule{
+  margin-top: 60px;
+  text-align: center;
+  &__area{
+    background-color: rgba(255, 255, 255, 0.29);
+    padding:30px 77px 60px;
+  }
+  &__list{
+    margin-top: 29px;
+    font-size: -20px;
+  }
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  &__time{
+    font-size: 20px;
+  }
+  &__place{
+    font-size: 20px;
+  }
+  &__ticket{
+    font-size: 20px;
+    text-decoration: underline;
+  }
+  &__link{
+    display: inline-block;
+    margin: 30px auto 0;
+    width:416px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__inquiry-btn{
+    @include detail-btn(193px, 60px);
+    background-color: #603813;
+  }
+  &__detail-btn{
+    @include detail-btn(193px, 60px)
+  }
+}
+
+footer{
+  margin-top: 60px;
+  height:80px;
+  background-color: #1A1A1A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__text{
+  color:$white;
 }
