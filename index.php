@@ -1,65 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>制作演習 | TOP</title>
-  <meta name="description" content="小池博史ブリッジプロジェクトが2013年から2020年までの8カ年計画で臨む、インド古代叙事詩「マハーバーラタ」の全編舞台作品化計画。いよいよその集大成である完全版マハーバーラタの公演が決定！！アジア各国のアーティストらが共同で取り組み、発展を遂げる本事業はアジア、そして世界へ向けてビッグウェーブを起こす。タイと日本から世界へと発信する本作。どうぞお見逃しなく！">
-  <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/nav_logo.png">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/destyle.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
-  <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png">
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.waypoints.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
-</head>
-<body>
-  <header class="header">
-    <nav class="global-nav">
-      <ul class="global-nav__nav-list">
-        <li class="global-nav__nav-item">
-          <a href="#"><p class="txtxs">トップ</p><p class="txtl">TOP</p></a>
-        </li>
-        <li class="global-nav__nav-item">
-          <a href="#"><p class="txtxs">ニュース</p><p class="txtl">NEWS</p></a>
-        </li>
-        <li class="global-nav__nav-item">
-          <a href="#"><p class="txtxs">ストーリー</p><p class="txtl">STORY</p></a>
-        </li>
-        <li class="global-nav__nav-item">
-          <a href="#"><p class="txtxs">著名人コメント</p><p class="txtl">COMMENTS</p></a>
-        </li>
-        <li class="global-nav__nav-item">
-          <a href="#"><p class="txtxs">キャスト</p><p class="txtl">CAST</p></a>
-        </li>
-        <li class="global-nav__nav-item">
-          <a href="#"><p class="txtxs">問い合わせ</p><p class="txtl">INQUIRY</p></a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="topview-area">
-    <div class="topview">
-      <div class="topview__title">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/topview_title.png" alt="完全版マハーバーラダ">
-      </div>
-      <div class="topview__info">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/topview_info.png" alt="">
-      </div>
-      <div class="topview__text-area">
-        <p class="topview__text1 txts">
-          小池博史ブリッジプロジェクトが2013年から2020年までの8カ年計画で臨む、インド古代叙事詩「マハーバーラタ」の全編舞台作品化計画。いよいよその集大成である<strong>完全版マハーバーラタ<h1></strong></h1>の公演が決定！！
-        </p>
-        <p class="topview__text2 txts">
-          アジア各国のアーティストらが共同で取り組み、発展を遂げる本事業はアジア、そして世界へ向けてビッグウェーブを起こす。タイと日本から世界へと発信する本作。どうぞお見逃しなく！
-        </p>
-      </div>
-      <a href="" class="topview__detail-btn">チケット予約サイトへ</a>
-    </div>
-  </section>
+<?php get_header(); ?>
 
   <section class="intro container">
     <h2 class="intro__title title">INTRODUCTION</h2>
@@ -74,69 +13,41 @@
     </p>
   </section>
 
+  
   <section class="news container">
+    <?php
+      $news_obj = get_term_by('slug','news','category'); 
+    ?>
     <h2 class="news__title title">NEWS</h2>
-    <a href="" class="news__detail-btn">ニュース一覧へ</a>
+    <a href="<?php echo esc_url(get_term_link($news_obj)); ?>" class="news__detail-btn">ニュース一覧へ</a>
     <div class="news__contents">
       <!---ここから記事-->
-      <article class="card">
-        <a href="" class="card__link">
-          <div class="card__img">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/card1.jpg" alt="news_thumbnail">
-          </div>
-          <div class="card__text txtxs">
-            <time class="card__date">2019.9.30</time>
-            <h3 class="card__title">「完全版マハーバーラタ1」2020年7月・東京公演！！</h3>
-          </div>
-        </a>
-      </article>
-      <article class="card">
-        <a href="" class="card__link">
-          <div class="card__img">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/card1.jpg" alt="news_thumbnail">
-          </div>
-          <div class="card__text txtxs">
-            <time class="card__date">2019.9.30</time>
-            <h3 class="card__title">「完全版マハーバーラタ1」2020年7月・東京公演！！</h3>
-          </div>
-        </a>
-      </article>
-      <article class="card">
-        <a href="" class="card__link">
-          <div class="card__img">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/card1.jpg" alt="news_thumbnail">
-          </div>
-          <div class="card__text txtxs">
-            <time class="card__date">2019.9.30</time>
-            <h3 class="card__title">「完全版マハーバーラタ1」2020年7月・東京公演！！</h3>
-          </div>
-        </a>
-      </article>
-      <article class="card">
-        <a href="" class="card__link">
-          <div class="card__img">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/card1.jpg" alt="news_thumbnail">
-          </div>
-          <div class="card__text txtxs">
-            <time class="card__date">2019.9.30</time>
-            <h3 class="card__title">「完全版マハーバーラタ1」2020年7月・東京公演！！</h3>
-          </div>
-        </a>
-      </article>
-      <article class="card">
-        <a href="" class="card__link">
-          <div class="card__img">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/card1.jpg" alt="news_thumbnail">
-          </div>
-          <div class="card__text txtxs">
-            <time class="card__date">2019.9.30</time>
-            <h3 class="card__title">「完全版マハーバーラタ1」2020年7月・東京公演！！</h3>
-          </div>
-        </a>
-      </article>
+      <?php
+        $news_posts = get_specific_posts('post', 'news', 5);
+        if($news_posts->have_posts()):
+          while($news_posts->have_posts()):
+            $news_posts->the_post();
+      ?>
+          <article class="card">
+            <a href="<?php the_permalink(); ?>" class="card__link">
+              <div class="card__img">
+                <?php the_post_thumbnail(array(300,300), array('class' => "card__thumbnail-img")); ?>
+              </div>
+              <div class="card__text txtxs">
+                <time class="card__date"><?php the_time('Y.m.d'); ?></time>
+                <h3 class="card__title"><?php the_title(); ?></h3>
+              </div>
+            </a>
+          </article>
+      <?php
+          endwhile;
+          wp_reset_postdata();
+        endif;
+      ?>
       <!---ここまで記事-->
     </div>
   </section>
+
 
   <section class="story">
     <div class="story__container container">
@@ -234,45 +145,4 @@
     </div>
   </section>
 
-  <section class="schedule">
-    <div class="schedule__area container">
-      <h2 class="schedule__title title">SCHEDULE</h2>
-      <ul class="schedule__list">
-        <li class="schedule__item">
-          <time class="schedule__date">2020.07.04</time>
-          <p class="schedule__time">17:00開演</p>
-          <p class="schedule__place">中野ZEROホール</p>
-          <a href="" class="schedule__ticket">チケット予約受付中</a>
-        </li>
-        <li class="schedule__item">
-          <time class="schedule__date">2020.07.04</time>
-          <p class="schedule__time">17:00開演</p>
-          <p class="schedule__place">中野ZEROホール</p>
-          <a href="" class="schedule__ticket">チケット予約受付中</a>
-        </li>
-        <li class="schedule__item">
-          <time class="schedule__date">2020.07.04</time>
-          <p class="schedule__time">17:00開演</p>
-          <p class="schedule__place">中野ZEROホール</p>
-          <a href="" class="schedule__ticket">チケット予約受付中</a>
-        </li>
-        <li class="schedule__item">
-          <time class="schedule__date">2020.07.04</time>
-          <p class="schedule__time">17:00開演</p>
-          <p class="schedule__place">中野ZEROホール</p>
-          <a href="" class="schedule__ticket">チケット予約受付中</a>
-        </li>
-      </ul>
-    </div>
-    <div class="schedule__link">
-      <a href="" class="schedule__inquiry-btn">お問い合わせはこちら</a>
-      <a href="" class="schedule__detail-btn">チケット予約サイトへ</a>
-    </div>
-  </section>
-
-  <footer>
-    <p class="footer__text txtxs">Copyright © 2019 完全版マハーバーラタ All Rights Reserved.</p>
-  </footer>
-
-</body>
-</html>
+  <?php get_footer(); ?>

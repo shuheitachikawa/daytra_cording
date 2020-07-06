@@ -1,10 +1,12 @@
 
-//news記事の4番目以降の表示変更
+//news記事の4番目以降の表示変更(トップページのみで実施)
 $(function(){
-  $(window).on('load', function(){
-    $('.card').eq(3).addClass('card-45');
-    $('.card').eq(4).addClass('card-45');
-  });
+  if($('body').hasClass('home')){
+    $(window).on('load', function(){
+      $('.card').eq(3).addClass('card-45');
+      $('.card').eq(4).addClass('card-45');
+    });
+  }
 })
 
 
