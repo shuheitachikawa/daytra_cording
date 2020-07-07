@@ -29,7 +29,7 @@
       </ul>
     </div>
     <div class="schedule__link">
-      <a href="" class="schedule__inquiry-btn">お問い合わせはこちら</a>
+      <a href="<?php echo home_url('/inquiry'); ?>" class="schedule__inquiry-btn">お問い合わせはこちら</a>
       <a href="" class="schedule__detail-btn">チケット予約サイトへ</a>
     </div>
   </section>

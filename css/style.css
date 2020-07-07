@@ -512,6 +512,8 @@ footer {
   color: #666666;
   line-height: 1.75;
   text-align: left;
+  height: 315px;
+  overflow: hidden;
 }
 
 .card-article {
@@ -648,4 +650,99 @@ footer {
 .page_navi .next, .page_navi .previous {
   color: black;
   background-color: transparent;
+}
+
+.comments-all {
+  margin: 30px 0 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.comments-all::after {
+  content: "";
+  display: block;
+  width: 32%;
+  height: 0;
+}
+
+.comment {
+  width: 250px;
+  height: 241px;
+  margin-bottom: 30.5px;
+}
+
+.comment__name {
+  font-size: 22px;
+  margin: 0;
+}
+
+.comment__work {
+  margin-top: 10px;
+}
+
+.comment__text {
+  text-align: left;
+  margin-top: 15px;
+  line-height: 1.63;
+}
+
+.cast-others {
+  margin-top: 61px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cast-other {
+  width: 390px;
+  display: flex;
+  margin-bottom: 30.5px;
+  text-align: left;
+}
+
+.cast-other__image {
+  width: 129.25px;
+  height: 129.25px;
+}
+
+.cast-other__image img {
+  border-radius: 50%;
+}
+
+.cast-other__text-area {
+  width: 250px;
+  margin-left: 10.8px;
+}
+
+.cast-other__nation {
+  font-size: 16px;
+}
+
+.cast-other__name {
+  margin-top: 10px;
+  font-size: 22.6px;
+  font-weight: 600;
+}
+
+.cast-other__work {
+  margin-top: 10px;
+}
+
+.cast-other__text {
+  height: 109px;
+  overflow: hidden;
+  margin-top: 10px;
+  line-height: 1.75;
+}
+
+.musicians {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 48px 0;
+  text-align: center;
+}
+
+.staffs {
+  padding: 48px 0;
+  text-align: center;
 }

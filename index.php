@@ -59,90 +59,26 @@
           インドだけでなくアジア全般で広く知られた作品であり、TVドラマや映画の原案として使われることも多い。全編舞台化の難しさ日本では、イギリスの演出家ピーター・ブルックがワールドツアーの一環として1988年6月に銀座セゾン劇場で上演。三部作であったが、上演時間は9時間にも及んだ。<br>
           日本人の作品としては演出家・宮城聰が『マハーバーラタ～ナラ王の冒険』や歌舞伎作品『極付印度伝マハーバーラタ戦記』として、「マハーバーラタ」の長大なストーリーの一部分を舞台化した。全編上映はブルック以外にめぼしい作品は世界的にも存在しない。
         </p>
-        <a href="" class="story__detail-btn">もっと詳しく</a>
+        <a href="<?php echo home_url('/story'); ?>" class="story__detail-btn">もっと詳しく</a>
       </div>
     </div>
   </section>
 
   <section class="comments container">
-    <h2 class="comments__title title">COMMENTS</h2>
-    <h3 class="comments__sub-title">舞台関係者のみならず各界著名人からコメントが届いています！</h3>
-    <div class="comments__exp">
-      <div class="comments__text-area">
-        <h4 class="comments__person">京都佛立ミュージアム館長<span class="comments__person--strong"> 長松清潤</span></h4>
-        <p class="comments__text txts">
-          「文に非ず、其の義に非ず、唯だ一部の意のみ。」<br>
-          まずこの聖句が浮かんだ。境界線に立つ人類。超越する意志。小池博史氏の心象が生み出したアバターが乱舞しながら深層意識に波紋を起こしてゆく。
-        </p>
-      </div>
-      <a href="" class="comments__detail-btn">もっと見る</a>
-    </div>
+
+    <?php
+      get_template_part('comment-top'); 
+      //館長のコメント
+    ?>
+
   </section>
 
 
   <section class="cast">
-    <h2 class="cast__title title">CAST</h2>
-    <div class="cast__white">
-      <div class="cast__container container">
-       <!---ここからパーソン-->
-        <div class="person">
-          <div class="person__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/person1.jpg" alt="">
-          </div>
-          <div class="person__info">
-            <p class="person__work">作・演出・振付・構成</p>
-            <p class="person__name txtm">小池博史</p>
-            <p class="person__sub-work txtxs">(バレエ、コンテンポラリーダンス)</p>
-            <p class="person__text txtxs">
-              茨城県日立市出身。一橋大学卒業。<br>
-              演出家・作家・振付家・舞台美術家・写真家、舞台芸術の学校（P.A.I.）校長。<br>
-              1982年「パパ・タラフマラ」設立。<br>
-              演劇、舞踊、オペラ、美術、建築等、ジャンルを縦横に渡りながら空間を築き上げてゆく手法で、国際的に高い評価を確立。<br>
-              3.11を受けて、翌2012年5月にパパ・タラフマラ解散。すぐに「小池博史ブリッジプロジェクト」を立ち上げ、作品を創作しながら、若手表現者の育成と芸術文化事業のプロデュースを手掛けるなど、活動は多岐に渡る。<br>
-              著書に「ロンググッドバイ～パパ・タラフマラとその時代」（青幻舎刊）、「からだのこえをきく」（新潮社刊）等。
-            </p>
-          </div>
-        </div>
-        <div class="person">
-          <div class="person__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/person1.jpg" alt="">
-          </div>
-          <div class="person__info">
-            <p class="person__work">作・演出・振付・構成</p>
-            <p class="person__name txtm">小池博史</p>
-            <p class="person__sub-work txtxs">(バレエ、コンテンポラリーダンス)</p>
-            <p class="person__text txtxs">
-              茨城県日立市出身。一橋大学卒業。<br>
-              演出家・作家・振付家・舞台美術家・写真家、舞台芸術の学校（P.A.I.）校長。<br>
-              1982年「パパ・タラフマラ」設立。<br>
-              演劇、舞踊、オペラ、美術、建築等、ジャンルを縦横に渡りながら空間を築き上げてゆく手法で、国際的に高い評価を確立。<br>
-              3.11を受けて、翌2012年5月にパパ・タラフマラ解散。すぐに「小池博史ブリッジプロジェクト」を立ち上げ、作品を創作しながら、若手表現者の育成と芸術文化事業のプロデュースを手掛けるなど、活動は多岐に渡る。<br>
-              著書に「ロンググッドバイ～パパ・タラフマラとその時代」（青幻舎刊）、「からだのこえをきく」（新潮社刊）等。
-            </p>
-          </div>
-        </div>
-        <div class="person">
-          <div class="person__image">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/person1.jpg" alt="">
-          </div>
-          <div class="person__info">
-            <p class="person__work">作・演出・振付・構成</p>
-            <p class="person__name txtm">小池博史</p>
-            <p class="person__sub-work txtxs">(バレエ、コンテンポラリーダンス)</p>
-            <p class="person__text txtxs">
-              茨城県日立市出身。一橋大学卒業。<br>
-              演出家・作家・振付家・舞台美術家・写真家、舞台芸術の学校（P.A.I.）校長。<br>
-              1982年「パパ・タラフマラ」設立。<br>
-              演劇、舞踊、オペラ、美術、建築等、ジャンルを縦横に渡りながら空間を築き上げてゆく手法で、国際的に高い評価を確立。<br>
-              3.11を受けて、翌2012年5月にパパ・タラフマラ解散。すぐに「小池博史ブリッジプロジェクト」を立ち上げ、作品を創作しながら、若手表現者の育成と芸術文化事業のプロデュースを手掛けるなど、活動は多岐に渡る。<br>
-              著書に「ロンググッドバイ～パパ・タラフマラとその時代」（青幻舎刊）、「からだのこえをきく」（新潮社刊）等。
-            </p>
-          </div>
-        </div>
-        <!---ここまでパーソン-->
-      </div>
-      <a href="" class="cast__detail-btn">もっと見る</a>
-    </div>
+    <?php
+      get_template_part('cast-top'); 
+      //館長のコメント
+    ?>
   </section>
 
   <?php get_footer(); ?>

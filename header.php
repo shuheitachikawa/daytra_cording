@@ -41,14 +41,16 @@
       <div class="topview__info">
         <img src="<?php echo get_template_directory_uri(); ?>/img/topview_info.png" alt="">
       </div>
-      <div class="topview__text-area">
-        <p class="topview__text1 txts">
-          小池博史ブリッジプロジェクトが2013年から2020年までの8カ年計画で臨む、インド古代叙事詩「マハーバーラタ」の全編舞台作品化計画。いよいよその集大成である<strong>完全版マハーバーラタ<h1></strong></h1>の公演が決定！！
-        </p>
-        <p class="topview__text2 txts">
-          アジア各国のアーティストらが共同で取り組み、発展を遂げる本事業はアジア、そして世界へ向けてビッグウェーブを起こす。タイと日本から世界へと発信する本作。どうぞお見逃しなく！
-        </p>
-      </div>
+      <?php if(is_home()): ?>
+        <div class="topview__text-area">
+          <p class="topview__text1 txts">
+            小池博史ブリッジプロジェクトが2013年から2020年までの8カ年計画で臨む、インド古代叙事詩「マハーバーラタ」の全編舞台作品化計画。いよいよその集大成である<strong>完全版マハーバーラタ<h1></strong></h1>の公演が決定！！
+          </p>
+          <p class="topview__text2 txts">
+            アジア各国のアーティストらが共同で取り組み、発展を遂げる本事業はアジア、そして世界へ向けてビッグウェーブを起こす。タイと日本から世界へと発信する本作。どうぞお見逃しなく！
+          </p>
+        </div>
+      <?php endif; ?>
       <a href="" class="topview__detail-btn">チケット予約サイトへ</a>
     </div>
   </section>
