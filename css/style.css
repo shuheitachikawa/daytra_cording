@@ -77,7 +77,6 @@ img {
 }
 
 .global-nav {
-  max-width: 664.28px;
   margin: 0 auto;
   height: 100%;
   color: #421f15;
@@ -87,16 +86,60 @@ img {
 .global-nav ul {
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
-.global-nav li .txtxs {
+.global-nav li {
+  margin: 0 12.8px;
+}
+
+.global-nav li a {
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+}
+
+.global-nav li a::before {
+  font-size: 12px;
   margin-bottom: 5.9px;
 }
 
+.global-nav .menu-item-43 a::before {
+  content: "トップ";
+}
+
+.global-nav .menu-item-45 a::before {
+  content: "ニュース";
+}
+
+.global-nav .menu-item-119 a::before {
+  content: "ストーリー";
+}
+
+.global-nav .menu-item-145 a::before {
+  content: "マンガ";
+}
+
+.global-nav .menu-item-60 a::before {
+  content: "著名人コメント";
+}
+
+.global-nav .menu-item-77 a::before {
+  content: "キャスト";
+}
+
+.global-nav .menu-item-136 a::before {
+  content: "問い合わせ";
+}
+
+.global-nav .menu-item-148 a::before {
+  content: "ご予約";
+}
+
 .topview-area {
-  height: 60vh;
+  height: 550px;
   background-image: url(../img/topview.jpg);
   background-position: right center;
   padding: 60px 0;
@@ -107,6 +150,7 @@ img {
   height: 100%;
   margin: 0 auto;
   position: relative;
+  z-index: 10;
 }
 
 .topview__info {
@@ -349,15 +393,18 @@ footer {
 .story__container {
   text-align: center;
   padding: 30px 0 32px;
+  z-index: 10;
 }
 
 .story__title {
   color: #ffffff;
+  z-index: 10;
 }
 
 .story__text-area {
   margin-top: 19px;
   text-align: right;
+  z-index: 10;
 }
 
 .story__text {
@@ -368,6 +415,7 @@ footer {
   height: 245px;
   overflow: hidden;
   line-height: 1.75;
+  z-index: 10;
 }
 
 .story__detail-btn {
@@ -745,4 +793,152 @@ footer {
 .staffs {
   padding: 48px 0;
   text-align: center;
+}
+
+.story-page {
+  position: relative;
+  z-index: 1;
+  height: calc(67vw);
+  margin-bottom: -190px;
+}
+
+.story-page__img {
+  position: absolute;
+  top: -180px;
+  z-index: 1;
+  width: 100%;
+}
+
+.story__container-page {
+  z-index: 10;
+  position: relative;
+}
+
+.story__container-page .story__title {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.story__container-page .story__text-area {
+  position: absolute;
+  right: 0;
+  top: 163px;
+}
+
+.story__container-page .story__text {
+  width: 390px;
+  height: 210px;
+}
+
+.story-others {
+  height: 327px;
+  background-color: black;
+  position: relative;
+}
+
+.story-others__image {
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.story-others__container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.story-others__text {
+  width: 390px;
+  height: 205px;
+  overflow: hidden;
+  color: #ffffff;
+  z-index: 10;
+  line-height: 1.75;
+}
+
+.story-others:nth-child(odd) .story-others__image {
+  left: 0;
+}
+
+.story-others:nth-child(odd) .story-others__text {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.story-page__space {
+  height: 60px;
+}
+
+.inquiry {
+  margin: 55px 0 60px;
+}
+
+.inquiry__title {
+  text-align: center;
+  margin: 0;
+}
+
+.inquiry__area {
+  margin-top: 24px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.29);
+}
+
+.inquiry__exp {
+  font-weight: 600;
+  line-height: 1.67;
+}
+
+.inquiry__form {
+  margin-top: 21.3px;
+  text-align: right;
+}
+
+.contact-form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.contact-form input, .contact-form textarea {
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-left: 16px;
+  width: 520px;
+  text-align: left;
+  padding: 15px;
+  font-weight: 300;
+}
+
+.contact-form textarea {
+  height: 165px;
+}
+
+.submit-btn {
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.submit-btn .wpcf7-submit {
+  background-color: #c63205;
+  color: #ffffff;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+}
+
+.confilm__comment {
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.67;
 }

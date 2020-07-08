@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>制作演習 | TOP</title>
+  <title>制作演習 | <?php echo get_main_title() ?></title>
   <meta name="description" content="小池博史ブリッジプロジェクトが2013年から2020年までの8カ年計画で臨む、インド古代叙事詩「マハーバーラタ」の全編舞台作品化計画。いよいよその集大成である完全版マハーバーラタの公演が決定！！アジア各国のアーティストらが共同で取り組み、発展を遂げる本事業はアジア、そして世界へ向けてビッグウェーブを起こす。タイと日本から世界へと発信する本作。どうぞお見逃しなく！">
   <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/nav_logo.png">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/destyle.css">
@@ -51,6 +51,6 @@
           </p>
         </div>
       <?php endif; ?>
-      <a href="" class="topview__detail-btn">チケット予約サイトへ</a>
+      <a href="<?php echo home_url('/reserve'); ?>" class="topview__detail-btn">チケット予約サイトへ</a>
     </div>
   </section>

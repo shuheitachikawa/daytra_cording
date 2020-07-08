@@ -24,6 +24,19 @@ return $specific_posts;
 };
 
 
+//contact form 7で送信完了時にconfilm.phpへ移動
+add_action( 'wp_footer', 'add_thanks_page' );
+function add_thanks_page() {
+echo <<< EOD
+<script>
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+  location = 'http://daytracopycording.local/confilm/';
+}, false );
+</script>
+EOD;
+}
+
+
 //記事ページならカテゴリー名、固定ページなら固定ページタイトル、カテゴリー一覧なら親カテゴリー名取得
 function get_main_title(){
   if(is_singular('post')):
