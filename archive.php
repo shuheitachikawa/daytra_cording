@@ -10,7 +10,7 @@
           while(have_posts()):
             the_post();
       ?>
-          <article class="card">
+          <article class="card animated">
             <a href="<?php the_permalink(); ?>" class="card__link">
               <div class="card__img">
                 <?php the_post_thumbnail(array(300,300), array('class' => "card__thumbnail-img")); ?>

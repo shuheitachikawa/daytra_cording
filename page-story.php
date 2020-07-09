@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
   <?php
-    $cf_group = SCF::get('story');
+    $cf_group = SCF::get('story',117);
     $field_value = $cf_group[0];
   ?>
 
@@ -13,7 +13,6 @@
       <h2 class="story__title title">STORY</h2>
       <div class="story__text-area">
         <p class="story__text txtxs"><?php echo nl2br($field_value['text-st']); ?></p>
-        
       </div>
     </div>
   </section>
@@ -25,7 +24,7 @@
       $field_value = $cf_group[$i];
   ?>
 
-  <section class="story-others">
+  <section class="story-others animated">
     <div class="story-others__image">
       <?php echo wp_get_attachment_image($field_value['image-st'],'large'); ?>
     </div>

@@ -15,7 +15,7 @@
       foreach ($cf_group as $field_name => $field_value){
     ?>
 
-    <div class="comment">
+    <div class="comment animated">
       <h3 class="comment__name txtl"><?php echo $field_value['name']; ?></h3>
       <p class="comment__work txtxs"><?php echo $field_value['work']; ?></p>
       <p class="comment__text "><?php echo $field_value['text']; ?></p>

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <section class="cast">
+  <section class="cast animated">
     <?php
       get_template_part('cast-top'); 
       //館長のコメント
@@ -17,7 +17,7 @@
       $field_value = $cf_group[$i];
     ?>
 
-    <div class="cast-other">
+    <div class="cast-other animated">
       <div class="cast-other__image">
       <?php echo wp_get_attachment_image($field_value['image']); ?>
       </div>
@@ -47,7 +47,7 @@
       $field_value = $cf_group[$i];
     ?>
 
-    <div class="cast-other">
+    <div class="cast-other animated">
       <div class="cast-other__image">
       <?php echo wp_get_attachment_image($field_value['image-m']); ?>
       </div>
@@ -78,7 +78,7 @@
       $field_value = $cf_group[$i];
     ?>
 
-    <div class="cast-other">
+    <div class="cast-other animated">
       <div class="cast-other__image">
       <?php echo wp_get_attachment_image($field_value['image-s']); ?>
       </div>

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <section class="intro container">
+  <section class="intro container animated">
     <h2 class="intro__title title">INTRODUCTION</h2>
     <h3 class="intro__sub-title">なぜ今「マハーバーラタ」なのか？</h3>
     <p class="intro__text txtxs">
@@ -14,7 +14,7 @@
   </section>
 
   
-  <section class="news container">
+  <section class="news container animated">
     <?php
       $news_obj = get_term_by('slug','news','category'); 
     ?>
@@ -49,22 +49,21 @@
   </section>
 
 
-  <section class="story">
+  <section class="story animated">
+  <?php
+    $cf_group = SCF::get('story',117);
+    $field_value = $cf_group[0];
+  ?>
     <div class="story__container container">
       <h2 class="story__title title">STORY</h2>
       <div class="story__text-area">
-        <p class="story__text txtxs">
-          マハー（偉大な）、バーラタ（バラタ族）、つまり「偉大なバラタ族」の物語。神々が人間界を作り出すところから始まり、バラタ族の中のクル家とパーンドゥ家という二つの部族間の対立を巡るストーリー。神の血を引く個性豊かな登場人物たちによる差別、対立、欲望、嫉妬など、生の苦しみが描かれ、最終的には一族が破滅していく。<br>
-          世界的な文学作品古代ギリシャの「イーリアス」「オデュッセイア」と並ぶ世界三大叙事詩の一つに数えられており、「ラーマーヤナ」と双璧を成すインド二大叙事詩の一つ。原語はサンスクリット語であるが、全18巻、10万詩節を超えるその長さは聖書の約4倍と言われ、原典の日本語訳はいまだ完結していない。<br>
-          インドだけでなくアジア全般で広く知られた作品であり、TVドラマや映画の原案として使われることも多い。全編舞台化の難しさ日本では、イギリスの演出家ピーター・ブルックがワールドツアーの一環として1988年6月に銀座セゾン劇場で上演。三部作であったが、上演時間は9時間にも及んだ。<br>
-          日本人の作品としては演出家・宮城聰が『マハーバーラタ～ナラ王の冒険』や歌舞伎作品『極付印度伝マハーバーラタ戦記』として、「マハーバーラタ」の長大なストーリーの一部分を舞台化した。全編上映はブルック以外にめぼしい作品は世界的にも存在しない。
-        </p>
+        <p class="story__text txtxs"><?php echo nl2br($field_value['text-st']); ?></p>
         <a href="<?php echo home_url('/story'); ?>" class="story__detail-btn">もっと詳しく</a>
       </div>
     </div>
   </section>
 
-  <section class="comments container">
+  <section class="comments container animated">
 
     <?php
       get_template_part('comment-top'); 
@@ -74,7 +73,7 @@
   </section>
 
 
-  <section class="cast">
+  <section class="cast animated">
     <?php
       get_template_part('cast-top'); 
       //館長のコメント

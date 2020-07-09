@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <section class="inquiry">
+  <section class="inquiry animated">
     <div class="inquiry__container container">
       <h2 class="inquiry__title title">RESERVE</h2>
       <div class="inquiry__area">
@@ -12,7 +12,7 @@
   </section>
 
 
-  <section class="news container">
+  <section class="news container animated">
     <?php
       $news_obj = get_term_by('slug','news','category'); 
     ?>

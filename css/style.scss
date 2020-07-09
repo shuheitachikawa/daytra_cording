@@ -2,10 +2,29 @@
 //共通設定
 //-----------------------------
 
+//レスポンシブ設定
+$breakpoints:(
+  m : "only screen and (max-width: 900px)",
+  s : "only screen and (max-width: 780px)",
+  xs : "only screen and (max-width: 440px)",
+);
+
+@mixin media($breakpoint){
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+$fontm:16px;
+$fonts:14px;
+
 //共通フォント設定
-h1,h2,h3,h4,h5,h6,p,a{
+html{
   font-family: "ヒラギノ角ゴ";
-  font-size: 16px;
+  font-size: $fontm;
+  @include media(s){
+    font-size: $fonts;
+  }
 }
 
 h2{
@@ -13,6 +32,12 @@ h2{
   font-weight: 600;
   line-height: 1.18;
   margin:15px 0;
+  @include media(m){
+    font-size: 20px;
+  }
+  @include media(s){
+    font-size: 18px;
+  }
 }
 
 h3{
@@ -20,6 +45,12 @@ h3{
   font-weight: 600;
   line-height: 1.44;
   margin:15px 0;
+  @include media(m){
+    font-size: 16px;
+  }
+  @include media(s){
+    font-size: 14px;
+  }
 }
 
 .title{
@@ -28,17 +59,20 @@ h3{
   color:#301F1B;
   letter-spacing: 0;
   line-height: 1.53;
+  @include media(s){
+    font-size: 30px;
+  }
 }
 
 .font-en{
   font-family: "Futura Condensed Medium 43pt";
 }
 
-.txtxl{font-size: 34px;}
-.txtl{font-size: 22px;}
-.txtm{font-size: 18px;}
-.txts{font-size: 14px;}
-.txtxs{font-size: 12px;}
+.txtxl{font-size: 2.125rem;}
+.txtl{font-size: 1.375rem;}
+.txtm{font-size: 1.125rem;}
+.txts{font-size: 0.875rem;}
+.txtxs{font-size: 0.750rem;}
 
 a:hover{
   transition:.3s;
@@ -50,12 +84,6 @@ $white:#ffffff;
 $black:#333333;
 $brown:#421f15;
 $red:#c63205;
-
-//共通レイアウト設定
-.container{
-  max-width:810px;
-  margin:0 auto;
-}
 
 //背景設定
 body{
@@ -74,11 +102,30 @@ body{
   text-align: center;
   width:$width;
   line-height: $height;
+  @include media(s){
+    height: 30px;
+    line-height: 30px;
+    width:140px;
+    font-size: 12px;
+    font-weight: 400;
+  }
 }
 
 img{
   width:100%;
   height:auto;
+}
+
+//共通レイアウト設定
+.container{
+  max-width:810px;
+  margin:0 auto;
+  @include media(m){
+    width:90vw;
+  }
+  @include media(s){
+    width:95vw;
+  }
 }
 
 //ヘッダー＋トップビュー
@@ -87,16 +134,17 @@ img{
   text-align: center;
 }
   .global-nav{
-    // max-width:664.28px;
     margin:0 auto;
     height:100%;
     color:$brown;
     font-weight: 600;
+    overflow: hidden;
     ul{
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
     }
     li{
       margin: 0 12.8px;
@@ -105,10 +153,16 @@ img{
         font-weight: 600;
         display: flex;
         flex-direction: column;
+        @include media(m){
+          font-size: 14px;
+        }
       }
       a::before{
         font-size: 12px;
         margin-bottom: 5.9px;
+        @include media(m){
+          display: none;
+        }
       }
     }
     .menu-item-43 a::before{
@@ -132,28 +186,92 @@ img{
     .menu-item-136 a::before{
       content:"問い合わせ"
     }
-    .menu-item-148 a::before{
+    .menu-item-156 a::before{
       content:"ご予約"
     }
 }
 
- .topview-area{
-  height: 550px;
+
+.topview-area{
+  height: 180px;
   background-image: url(../img/topview.jpg);
   background-position:right center;
+  padding:0;
+  @include media(m){
+    background-position: center center;
+  }
+}
+.topview{
+  max-width: 810px;
+  height:100%;
+  margin:0 auto;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  @include media(m){
+    width:90vw;
+  }
+  @include media(s){
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__title{
+    width:460px;
+    @include media(m){
+      max-width:460px * 0.9;
+    }
+    @include media(s){
+      max-width:100%;
+      margin-bottom: 20px;
+    }
+  }
+  &__info{
+    width:250px;
+    @include media(m){
+      max-width:50%;
+    }
+  }
+  &__detail-btn{
+    position: absolute;
+    right:0;
+    bottom:-30px;
+    @include detail-btn(200px, 60px);
+  }
+ }
+
+body.home{
+ .topview-area{
+  height: 550px;
   padding:60px 0;
 }
 .topview{
+  display: block;
   max-width: 920px;
   height:100%;
   margin:0 auto;
   position: relative;
   z-index: 10;
+  @include media(m){
+    width:90vw;
+    position: static;
+  }
+  &__title{
+    width:100%;
+  }
   &__info{
     position: absolute;
     width:370px;
     left:0;
     bottom:0;
+    @include media(m){
+      position: static;
+      margin: 40px auto;
+    }
+    @include media(s){
+      width: 370 / 775 * 100vw;
+    }
   }
   &__text-area{
     position: absolute;
@@ -161,6 +279,14 @@ img{
     bottom:0;
     color:$white;
     width:340px;
+    @include media(m){
+      position: static;
+      margin: 60px auto 0;
+      width:100%;
+    }
+    @include media(s){
+      margin-top: 30px;
+    }
   }
   &__text1,&__text2{
     line-height: 1.57;
@@ -172,12 +298,47 @@ img{
     position: absolute;
     right:0;
     bottom:-90px;
-    @include detail-btn(200px, 60px);
+    @include media(m){
+      position: static;
+      display: block;
+      margin-top: 20px;
+      margin-right: 0;
+      margin-left: auto;
+    }
+    @include media(s){
+      margin-top: 5px;
+    }
   }
+ }
 }
+
+
 @media (min-width:1793px){
   .topview{
     background-size: cover;
+  }
+}
+
+.bread_crumb{
+  position:absolute;
+  left:0;
+  bottom:-46.5px;
+  width:100%;
+  font-weight: 600;
+  line-height: 1;
+  font-size: 12px;
+  @include media(s){
+    bottom:-56.5px;
+    font-weight: 300;
+  }
+  li{
+    display: inline-block;
+  }
+  li:after{
+    content:" ＞ ";
+  }
+  li:last-child:after{
+    content:"";
   }
 }
 
@@ -188,10 +349,13 @@ img{
   &__area{
     background-color: rgba(255, 255, 255, 0.29);
     padding:30px 77px 60px;
+    @include media(m){
+      padding:20px 30px;
+    }
   }
   &__list{
     margin-top: 29px;
-    font-size: -20px;
+    font-size: 20px;
   }
   &__item{
     display: flex;
@@ -199,16 +363,38 @@ img{
     margin-bottom: 25px;
     font-weight: 600;
     font-size: 20px;
+    @include media(m){
+      font-size: 15px;
+    }
+    @include media(s){
+      font-size: 12px;
+    }
   }
   &__time{
     font-size: 20px;
+    @include media(m){
+      font-size: 15px;
+    }
+    @include media(s){
+      font-size: 12px;
+    }
   }
   &__place{
     font-size: 20px;
+    @include media(m){
+      font-size: 15px;
+    }
+    @include media(s){
+      font-size: 12px;
+    }
+
   }
   &__ticket{
     font-size: 20px;
     text-decoration: underline;
+    @include media(m){
+      font-size: 15px;
+    }
   }
   &__link{
     display: inline-block;
@@ -216,13 +402,23 @@ img{
     width:416px;
     display: flex;
     justify-content: space-between;
+    @include media(xs){
+      flex-direction: column;
+      width:100%;
+    }
   }
   &__inquiry-btn{
     @include detail-btn(193px, 60px);
     background-color: #603813;
+    @include media(xs){
+      margin: 0 auto 15px;
+    }
   }
   &__detail-btn{
-    @include detail-btn(193px, 60px)
+    @include detail-btn(193px, 60px);
+    @include media(xs){
+      margin: 0 auto;
+    }
   }
 }
 
@@ -262,6 +458,9 @@ footer{
     color:#AEAFAD;
     margin-top: 15px;
     line-height: 1;
+    @include media(s){
+      font-size: 20px;
+    }
   }
   &__text{
     margin-top: 30px;
@@ -269,6 +468,9 @@ footer{
     text-align: left;
     line-height: 1.75;
     columns: 2;
+    @include media(s){
+      column-count: 1;
+    }
   }
 }
 
@@ -288,6 +490,9 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @include media(s){
+      justify-content: center;
+    }
   }
 }
 .card{
@@ -295,16 +500,39 @@ footer{
   height:260px;
   background-color: #fff;
   margin-bottom: 30px;
+  @include media(m){
+    width:230px;
+  }
+  @include media(s){
+    width:510px;
+    max-width:510px;
+    height:366px;
+  }
+  @include media(xs){
+    height:300px;
+  }
   &__link{
+    height:100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    @include media(xs){
+      justify-content: center;
+     }
   }
   &__img{
-    height:140px;
-    overflow: hidden;
+    height:75%;
+    width:auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    @include media(s){
+    // height:75%;
+    }
+    @include media(xs){
+     align-items: flex-start;
+    }
   }
   &__text{
     padding:14px 15px;
@@ -325,6 +553,9 @@ footer{
 .card-45{
   width:390px;
   height:88px;
+  @include media(m){
+    width: 350px;
+  }
   .card__link{
     flex-direction:row;
     height:100%;
@@ -353,8 +584,11 @@ footer{
   }
   &__text-area{
     margin-top: 19px;
-    text-align: right;
     z-index: 10;
+    text-align: right;
+    @include media(s){
+      text-align: center;
+    }
   }
   &__text{
     margin:0 0 0 auto;
@@ -365,10 +599,19 @@ footer{
     overflow: hidden;
     line-height: 1.75;
     z-index: 10;
+    @include media(s){
+      margin: 0 auto;
+      height: 250px;
+      width:100%;
+      max-width: 510px;
+    }
   }
   &__detail-btn{
     margin-top: 8.6px;
     @include detail-btn(116px, 37px);
+    @include media(s){
+      margin-top: 20px;
+    }
   }
 }
 @media (min-width:1022px){
@@ -385,29 +628,49 @@ footer{
     font-size: 24px;
     font-weight: 600;
     margin-top: 33px;
+    @include media(s){
+      font-size: 18px;
+    }
   }
   &__exp{
     margin-top: 33px;
     background-image: url(../img/comments.jpg);
-    background-position: center;
+    background-position: right;
     color:$white;
     padding:44px 30px;
     position: relative;
   }
   &__text-area{
-    width: 420px;
+    max-width: 420px;
     text-align: left;
   }
   &__person{
     font-size: 20px;
     font-weight: 600;
+    max-width: 100%;
+    @include media(s){
+      font-size: 16px;
+    }
+    @include media(xs){
+      line-height: 1.5;
+    }
     &--strong{
       font-size: 26px;
+    }
+  }
+  &__br{
+    display:none;
+    @include media(xs){
+      display: block;
     }
   }
   &__text{
     margin-top: 15px;
     line-height: 1.57;
+    max-width: 100%;
+    @include media(s){
+      font-size: 12px;
+    }
   }
   &__detail-btn{
     @include detail-btn(116.71px, 36.43px);
@@ -425,6 +688,9 @@ footer{
     margin-top:134px;
     position: relative;
     height:650px;
+    @include media(s){
+      height:1800px;
+    }
   }
   &__container{
     position:absolute;
@@ -433,6 +699,9 @@ footer{
     right: 0;
     display: flex;
     justify-content: space-between;
+    @include media(s){
+      flex-direction: column;
+    }
   }
   &__detail-btn{
     position: absolute;
@@ -448,6 +717,14 @@ footer{
   width:250px;
   display: flex;
   flex-direction: column;
+  @include media(m){
+    width: 220px;
+  }
+  @include media(s){
+    width: 100%;
+    max-width: 510px;
+    margin:0 auto;
+  }
   &__image{
     width:220px;
     margin:0 auto;
@@ -457,6 +734,9 @@ footer{
   }
   &__info{
     margin-top:38.8px;
+    @include media(s){
+      margin-top: 20px;
+    }
   }
   &__name{
     margin-top: 14px;
@@ -496,6 +776,9 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+    @include media(m){
+      height:90vw * 578 / 810;
+    }
   }
   &__thumbnail-img{
     height:100%;
@@ -506,6 +789,9 @@ footer{
     color:$white;
     padding:14px 29.5px;
     text-align: left;
+    @include media(xs){
+      padding:7px 15px;
+    }
   }
   &__date{
     color: $white;
@@ -514,6 +800,12 @@ footer{
   &__title{
     font-weight: 600;
     font-size: 26px;
+    @include media(m){
+      font-size: 22px;
+    }
+    @include media(xs){
+      font-size: 18px;
+    }
   }
   &__text-area{
     background-color: rgba(255, 255, 255, 0.9);
@@ -522,6 +814,12 @@ footer{
     text-align: left;
     line-height: 2;
     letter-spacing: 0;
+    @include media(s){
+      font-size: 12px;
+    }
+    @include media(xs){
+      padding: 15px;
+    }
   }
 }
 
@@ -545,12 +843,17 @@ footer{
   display: inline-block;
   position: absolute;
   left:0;
+  @include media(s){
+    position:static;
+    display: block;
+  }
+
   &__area{
     display: flex;
     align-items: center;
   }
   &__text-area{
-    min-width: 345px;
+    width: 100%;
     margin-left: 12.5px;
     text-align: left;
   }
@@ -564,13 +867,18 @@ footer{
   display: inline-block;
   position: absolute;
   right:0;
+  @include media(s){
+    position:static;
+    display: block;
+    margin-top: 15px;
+  }
   &__area{
     display: flex;
     align-items: center;
     flex-direction:row-reverse;
   }
   &__text-area{
-    min-width: 345px;
+    width: 100%;
     text-align: right;
     margin-right: 12.5px;
   }
@@ -616,6 +924,9 @@ footer{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @include media(m){
+    justify-content: space-around;
+  }
 }
 .comments-all::after{ //最終行を左寄せ
   content: "";
@@ -627,6 +938,14 @@ footer{
   width:250px;
   height:241px;
   margin-bottom: 30.5px;
+  @include media(m){
+    width:350px;
+    height:auto;
+  }
+  @include media(s){
+    width:510px;
+    max-width:510px;
+  }
   &__name{
     font-size: 22px;
     margin: 0;
@@ -646,20 +965,30 @@ footer{
 //キャスト一覧ページ（page-cast.php）
 //-----------------------------
 .cast-others{
- margin-top: 61px; 
- display: flex;
- justify-content: space-between;
- flex-wrap: wrap;
+  margin-top: 61px; 
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  @include media(s){
+  margin-top: 30px;
+  }
 }
 
 .cast-other{
-  width:390px;
+  width:340px;
   display: flex;
   margin-bottom: 30.5px;
   text-align: left;
+  @include media(s){
+    width:510px;
+    max-width:520px;
+    margin:20px auto;
+  }
   &__image{
     width:129.25px;
-    height:129.25px;
+    @include media(s){
+      width:30%;
+    }
     img{
       border-radius: 50%;
     }
@@ -667,6 +996,10 @@ footer{
   &__text-area{
     width:250px;
     margin-left: 10.8px;
+    @include media(s){
+      width:60%;
+      margin-left: 20px;
+    }
   }
   &__nation{
     font-size: 16px;
@@ -691,11 +1024,17 @@ footer{
   background-color: rgba(255, 255, 255, 0.9);
   padding:48px 0;
   text-align: center;
+  @include media(s){
+    padding: 20px 0;
+  }
 }
 
 .staffs{
   padding:48px 0;
   text-align: center;
+  @include media(s){
+    padding: 20px 0;
+  }
 }
 
 
@@ -707,32 +1046,59 @@ footer{
   z-index: 1;
   height:calc(67vw);
   margin-bottom: -190px;
+  @include media(s){
+    margin-bottom: 0;
+    height:310px;
+  }
   &__img{
     position:absolute;
     top:-180px;
     z-index: 1;
     width:100%;
+    @include media(s){
+      height:500px;
+      overflow: hidden;
+    }
+    img{
+      @include media(s){
+        height:100%;
+        width:auto;
+      }
+    }
   }
 }
 
+
 .story__container-page{
   z-index: 10;
-  //margin-top: 29px;
   position: relative;
   .story__title{
     position: absolute;
     top:75px;
     left: 50%;
     transform: translate(-50%, -50%);
+    @include media(s){
+      top:45px;
+    }
   }
   .story__text-area{
     position: absolute;
     right:0;
     top:163px;
+    @include media(m){
+      top:100px;
+    }
+    @include media(s){
+      top:80px;
+    }
   }
   .story__text{
     width:390px;
     height:210px;
+    @include media(s){
+      width:100%;
+      height:140px;
+    }
   }
 }
 
@@ -749,7 +1115,9 @@ footer{
     align-items: center;
     overflow: hidden;
     z-index: 0;
-
+    @include media(xs){
+      width:100%;
+    }
   }
   &__container{
     height:100%;
@@ -793,11 +1161,17 @@ footer{
   &__area{
     margin-top: 24px;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.29)
+    background-color: rgba(255, 255, 255, 0.29);
+    @include media(s){
+      padding: 15px;
+    }
   }
   &__exp{
     font-weight: 600;
     line-height: 1.67;
+    @include media(m){
+      font-size: 15px;
+    }
   }
   &__form{
     margin-top: 21.3px;
@@ -812,6 +1186,18 @@ footer{
   margin-bottom: 15px;
   font-size: 18px;
   font-weight: 600;
+  @include media(m){
+    font-size: 15px;
+  }
+  @include media(s){
+    flex-direction: column;
+    align-items: start;
+  }
+  span{
+    @include media(s){
+      width:100%;
+    }
+  }
   input, textarea{
     background-color: rgba(255, 255, 255, 0.7);
     margin-left: 16px;
@@ -819,6 +1205,10 @@ footer{
     text-align: left;
     padding:15px;
     font-weight: 300;
+    @include media(s){
+      width: 100%;
+      margin: 0 0 20px;
+    }
   }
   textarea{
     height:165px;
@@ -833,6 +1223,11 @@ footer{
     width:200px;
     height:60px;
     text-align: center;
+    line-height: 100%;
+    @include media(m){
+      width: 150px;
+      height: 40px;
+    }
   }
 }
 
@@ -844,3 +1239,23 @@ footer{
   font-weight: 600;
   line-height: 1.67;
 }
+
+
+
+//-----------------------------
+//マンガページ（page-comic.php）
+//-----------------------------
+.comic{
+  margin: 98px 0 60px;
+  &__title{
+    text-align: center;
+  }
+  &__sub-title{
+    text-align: center;
+  }
+  &__area{
+    margin-top: 30px;
+    padding: 15px;
+  }
+}
+
